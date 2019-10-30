@@ -22,6 +22,8 @@ namespace TicTacToe
         // Draws the board
         public void Draw()
         {
+            Console.Clear();
+
             Console.WriteLine(Environment.NewLine + "TicTacToe v1.0" + Environment.NewLine);
             Console.WriteLine("     |     |");
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[0, 0], board[0, 1], board[0, 2]);
@@ -32,24 +34,142 @@ namespace TicTacToe
             Console.WriteLine("     |     |");
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[2, 0], board[2, 1], board[2, 2]);
             Console.WriteLine("     |     |");
+                   
                                            
-            // NEXT TO DO !!!!   IMPORTANT !!!!!!!!!!!!!!!!!!
-            //update the board instead of drawing new boards.
+            // TO DO !!!!   IMPORTANT !!!!!!!!!!!!!!!!!!
+            
+            // make a game loop , instead of hardcoded move() draw() methods
+            // a winCheck method that launches after the 5th move.
+            // Who is the player to make a move notification.
 
         }
 
         // a player makes a move using any of the 1 - 9 keys, a Move gets assinged to the array.
         public void Move()
         {
-            if (GetPlayer() == false)
+            var input = Console.ReadKey();
+
+            switch (input.Key)
             {
-                board[0, 0] = "X";
+                case ConsoleKey.NumPad7:
+                    {
+                        if(GetPlayer() == false)
+                        {
+                            board[0, 0] = "X";
+                        }
+                        else
+                        {
+                            board[0, 0] = "O";
+                        }
+                            moveCounter++;
+                            break;
+                    }
+                case ConsoleKey.NumPad8:
+                    {
+                        if (GetPlayer() == false)
+                        {
+                            board[0, 1] = "X";
+                        }
+                        else
+                        {
+                            board[0, 1] = "O";
+                        }
+                        moveCounter++;
+                        break;
+                    }
+                case ConsoleKey.NumPad9:
+                    {
+                        if (GetPlayer() == false)
+                        {
+                            board[0, 2] = "X";
+                        }
+                        else
+                        {
+                            board[0, 2] = "O";
+                        }
+                        moveCounter++;
+                        break;
+                    }
+                case ConsoleKey.NumPad4:
+                    {
+                        if (GetPlayer() == false)
+                        {
+                            board[1, 0] = "X";
+                        }
+                        else
+                        {
+                            board[1, 0] = "O";
+                        }
+                        moveCounter++;
+                        break;
+                    }
+                case ConsoleKey.NumPad5:
+                    {
+                        if (GetPlayer() == false)
+                        {
+                            board[1, 1] = "X";
+                        }
+                        else
+                        {
+                            board[1, 1] = "O";
+                        }
+                        moveCounter++;
+                        break;
+                    }
+                case ConsoleKey.NumPad6:
+                    {
+                        if (GetPlayer() == false)
+                        {
+                            board[1, 2] = "X";
+                        }
+                        else
+                        {
+                            board[1, 2] = "O";
+                        }
+                        moveCounter++;
+                        break;
+                    }
+                case ConsoleKey.NumPad1:
+                    {
+                        if (GetPlayer() == false)
+                        {
+                            board[2, 0] = "X";
+                        }
+                        else
+                        {
+                            board[2, 0] = "O";
+                        }
+                        moveCounter++;
+                        break;
+                    }
+                case ConsoleKey.NumPad2:
+                    {
+                        if (GetPlayer() == false)
+                        {
+                            board[2, 1] = "X";
+                        }
+                        else
+                        {
+                            board[2, 1] = "O";
+                        }
+                        moveCounter++;
+                        break;
+                    }
+                case ConsoleKey.NumPad3:
+                    {
+                        if (GetPlayer() == false)
+                        {
+                            board[2, 2] = "X";
+                        }
+                        else
+                        {
+                            board[2, 2] = "O";
+                        }
+                        moveCounter++;
+                        break;
+                    }
+
             }
-            else
-            {
-                board[0, 1] = "O";
-            }
-            moveCounter++; 
         }
 
         // a method to Retreive Player status.  If this is TRUE, it is Player 2, to make a move.
